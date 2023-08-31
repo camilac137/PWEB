@@ -1,0 +1,105 @@
+/*geral*/
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif,"times";
+    background-color: #e270c9;
+    background-image: linear-gradient( #da88c9bb, rgb(136, 44, 101));
+    
+}
+
+/*formulario*/
+#formulario{
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px dashed #383737;
+    border-radius: 10px;
+    max-width: 800px;
+}
+
+/*titulo dos campos*/
+label{
+    font-size: 16px;
+    font-weight: bold;
+    color: #1c111d;
+
+}
+
+/*campo de texto*/
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 10px;
+    border: 1px solid #571351;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    /* se quiser que ocupe todo o espaço do form
+    widt: 100% */
+
+}
+
+/*campo de opções*/
+input[type="radio"],
+input[type="checkbox"]
+{
+    margin-right: 5px;
+}
+
+/*botões*/
+input[type="submit"],
+input[type="reset"],
+button[type="button"]
+{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #333333;
+    cursor: pointer;
+}
+
+/*botão cancelar*/
+button[type="button"]
+{
+    background-color: #511e9848;
+}
+
+/*campos de seleção*/
+select {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 50%;
+    margin-bottom: 100px;
+    background-image: linear-gradient( #504b4f23, rgba(167, 14, 108, 0.171));
+
+}
+
+/*quando selecionar o campo de seleção*/
+select:focus{
+    outline: 2px solid red;
+    border-color: #333333;
+}
+
+/*legendas dos campos*/
+legend{
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+/*mensagem dos erros*/
+input:invalid{
+    border: 2px solid red;
+}
+
+.rodape{
+    margin: 0 auto;
+    text-align: center;
+
+}
