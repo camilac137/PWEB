@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Estatísticas do Questionário</title>
+<link rel="stylesheet" href="pesquisa.css">
+<body>
+<h1>Estatísticas do Questionário</h1>
+
+ 
+
+    <div class="container">
+<label for="idade">Idade:</label>
+<input type="number" id="idade">
+
+<label for="sexo">Sexo:</label>
+<select id="sexo">
+<option value="Masculino">Masculino</option>
+<option value="Feminino">Feminino</option>
+<option value="Outro">Prefiro não informar</option>
+</select>
+
+<label for="opiniao">Opinião:</label>
+<select id="opiniao">
+<option value="ótimo">Ótimo</option>
+<option value="bom">Bom</option>
+<option value="regular">Regular</option>
+<option value="péssimo">Péssimo</option>
+</select>
+
+<button onclick="adicionarResposta()">Adicionar Resposta</button>
+
+<h2>Resultados:</h2>
+<p>Média de idade: <span id="mediaIdade"></span></p>
+<p>Idade da pessoa mais velha: <span id="idadeMaisVelha"></span></p>
+<p>Idade da pessoa mais nova: <span id="idadeMaisNova"></span></p>
+<p>Quantidade de pessoas que responderam péssimo: <span id="totalPessimo"></span></p>
+<p>Porcentagem de pessoas que responderam péssimo: <span id="porcentagemPessimo"></span></p>
+</div>
+<script src="pesquisa.js"></script>
+</body>
+</html>
