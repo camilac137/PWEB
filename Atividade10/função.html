@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Funções</title>
+</head>
+<body>
+    <h1>Funções</h1>
+
+    <p>Encontre o maior número</p>
+    <button onclick="encontrarMaior()">Encontrar Maior</button>
+    <p id="maiorResultado"></p>
+
+    <p>Ordene em ordem crescente</p>
+    <button onclick="ordenarCrescente()">Ordenar Crescente</button>
+    <p id="ordenarResultado"></p>
+
+    <script src="função.js"></script>
+    <script>
+        function encontrarMaior() {
+            const num1 = parseFloat(prompt("Digite o primeiro número "));
+            const num2 = parseFloat(prompt("Digite o segundo número "));
+            const num3 = parseFloat(prompt("Digite o terceiro número "));
+            const maior = Math.max(num1, num2, num3);
+            document.getElementById("maiorResultado").textContent = `O maior número é: ${maior}`;
+        }
+
+        function ordenarCrescente() {
+            const num1 = parseFloat(prompt("Digite o primeiro número "));
+            const num2 = parseFloat(prompt("Digite o segundo número "));
+            const num3 = parseFloat(prompt("Digite o terceiro número "));
+            const numeros = [num1, num2, num3];
+            numeros.sort((a, b) => a - b);
+            document.getElementById("ordenarResultado").textContent = `Números em ordem crescente  ${numeros.join(', ')}`;
+        }
+    </script>
+</body>
+</html>
