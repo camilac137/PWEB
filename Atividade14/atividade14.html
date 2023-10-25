@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Transformação de Texto</title>
+</head>
+<body>
+<h1>Transformação de Texto</h1>
+<input type="text" id="inputText" placeholder="Digite o texto aqui">
+<br><br>
+<input type="radio" id="upperCaseCheckbox"> Transformar em Maiúsculas
+<br>
+<input type="radio" id="lowerCaseCheckbox"> Transformar em Minúsculas
+<br><br>
+<div id="output"></div>
+ 
+    <script>
+        const inputText = document.getElementById('inputText');
+        const upperCaseCheckbox = document.getElementById('upperCaseCheckbox');
+        const lowerCaseCheckbox = document.getElementById('lowerCaseCheckbox');
+        const output = document.getElementById('output');
+ 
+        inputText.addEventListener('input', transformText);
+        upperCaseCheckbox.addEventListener('change', transformText);
+        lowerCaseCheckbox.addEventListener('change', transformText);
+ 
+        function transformText() {
+            let text = inputText.value;
+            if (upperCaseCheckbox.checked) {
+                text = text.toUpperCase();
+            }
+            if (lowerCaseCheckbox.checked) {
+                text = text.toLowerCase();
+            }
+            output.textContent = text;
+        }
+</script>
+</body>
+</html>
