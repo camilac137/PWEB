@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 15</title>
+</head>
+<body>
+    <form name="meuForm" onsubmit="return validar()">
+        <h1>Formulário Principal</h1>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" required><br>
+        
+        <label for="email">E-mail:</label>
+        <input type="text" name="email" id="email" required><br>
+        
+        <label for="comentario">Comentário:</label>
+        <textarea name="comentario" id="comentario" required></textarea><br>
+        
+        <label>Pesquisa:</label>
+        <br><label>Primeira vez nesta página?</label><br>
+        <input type="radio" name="pesquisa" value="sim" required> Sim
+        <input type="radio" name="pesquisa" value="nao"> Não<br>
+        
+        <input type="submit" value="Enviar">
+        <button type="button" onclick="limparFormulario()">Limpar</button>
+    </form>
+
+    <p id="resultado" class="error"></p>
+
+    <script>
+        function validar() {
+            var nome = document.meuForm.nome.value;
+            var email = document.meuForm.email.value;
+            var comentario = document.meuForm.comentario.value;
+            var pesquisa = document.meuForm.pesquisa.value;
+
+            if (nome.length < 10) {
+                document.getElementById("resultado").innerHTML = "Nome não pode ter menos de 10 caracteres.";
+                return false;
+            }
+
+            if (email.indexOf('@') === -1) {
+                document.getElementById("resultado").innerHTML = "O Email deve conter o caractere '@'.";
+                return false;
+            }
+
+            if (email.indexOf('.') === -1) {
+                document.getElementById("resultado").innerHTML = "O Email deve conter o caractere '.'.";
+                return false;
+            }
+
+            if (comentario.length < 20) {
+                document.getElementById("resultado").innerHTML = "Comentário deve ter pelo menos 20 caracteres.";
+                return false;
+            }
+
+            if (pesquisa !== "sim") {
+                alert("Que bom que você voltou a visitar esta página!");
+            } else {
+                alert("Volte sempre a esta página!");
+            }
+
+            return true;
+        }
+        function limparFormulario() {
+            document.meuForm.reset(); // Limpa o formulário
+            document.getElementById("resultado").innerHTML = "";
+    }
+    </script>
+</body>
+</html>
