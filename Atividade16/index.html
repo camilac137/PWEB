@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 16</title>
+</head>
+<body>
+  <h1>Selecione um curso da Fatec Sorocaba</h1>
+  <select id="cursoSelect">
+    <option value="fm">Fabricação Mecânica</option>
+    <option value="ads">Análise e Desenvolvimento de Sistemas</option>
+    <option value="pol">Polímeros</option>
+    <option value="logistica">Logística</option>
+  </select>
+  <br>
+  <button onclick="abrirCurso()">Abrir Curso</button>
+
+  <script>
+    function abrirCurso() {
+      const cursoSelect = document.getElementById("cursoSelect");
+      const selectedCurso = cursoSelect.value;
+      const cursoInfo = getCursoInfo(selectedCurso);
+
+      if (confirm(`Deseja abrir o curso de ${cursoInfo.nome}?`)) {
+        const newWindow = window.open("", "Curso", "width=600, height=300");
+        newWindow.document.write(`<h2>${cursoInfo.nome}</h2>`);
+        newWindow.document.write(`<p>${cursoInfo.descricao}</p>`);
+        newWindow.document.write(`<p>Carga Horária: ${cursoInfo.cargaHoraria} horas</p>`);
+        newWindow.document.close();
+      }
+    }
+
+    function getCursoInfo(curso) {
+      // Aqui você pode adicionar informações sobre os cursos
+      const cursos = {
+        fm: { nome: "Fabricação Mecânica", descricao: "Curso de graduação em Fabricação Mecânica.", cargaHoraria: 2880 },
+        ads: { nome: "Análise e Desenvolvimento de Sistemas", descricao: "Curso de graduação em Análise e Desenvolvimento de Sistemas.", cargaHoraria: 2880 },
+        pol: { nome: "Polímeros", descricao: "Curso de graduação em Polímeros.", cargaHoraria: 2880 },
+        logistica: { nome: "Logística", descricao: "Curso de graduação em Logística.", cargaHoraria: 2880 },
+      };
+
+      return cursos[curso];
+    }
+  </script>
+</body>
+</html>
